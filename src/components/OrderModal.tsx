@@ -31,7 +31,7 @@ export function OrderModal() {
             <IoIosCloseCircleOutline size="20px" />
           </button>
           <h3>
-        {state.selected.name}
+          {state.selected.name}
           </h3>
         </div>
 

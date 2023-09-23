@@ -65,6 +65,17 @@ export const menuItems: MenuItem[] = [
     ],
   },
   {
+    image: '',
+    name: 'an item to sell',
+    description: 'a description of the item',
+    amt: 5.99,
+    toppings: [
+      { name: 'topping 1', amt: 1.99 },
+      { name: 'topping 2', amt: 0.99 },
+      { name: 'topping 3', amt: 3.99 },
+    ],
+  },
+  {
     image: 'images/extreme-burrito.png',
     name: 'Burrito Extreme',
     description:
@@ -83,9 +94,9 @@ export const menuItems: MenuItem[] = [
 ];
 
 export const shopInfo: Shop = {
-  shop_name: 'Casa de Miguel',
-  shop_description: 'Food that Makes Your Taste Buds Sing',
-  shop_splash_img: 'images/shop-image.png',
+  shop_name: 'The Name of the Shop',
+  shop_description: 'A description of the shop',
+  shop_splash_img: '',
   selected: { price: 0, name: '', toppings: [] },
   cart: { price: 0, name: '', toppings: [] },
   menuItems,

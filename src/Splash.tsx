@@ -12,8 +12,6 @@ export function Splash() {
       <div className="w-full h-{200} overflow-clip ">
         <img
           className="object-contain "
-          width="1280"
-          height="200"
           alt={state.shop_name}
           src={state.shop_splash_img}
         />

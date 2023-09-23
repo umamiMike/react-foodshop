@@ -4,21 +4,27 @@ import { AppContext } from './AppContext'
 export function Cart() {
   const { state } = useContext(AppContext)
   const { cart } = state
-  const visible = cart.toppings.length > 0 ? 'bottom-0' : ' -bottom-1/4'
+
+
   const price = cart.price ? `$${cart.price.toFixed(2)}` : ''
-  const toppingsMessage = () =>
-    cart.toppings
-      .map((t) => t.name)
-      .join(', ')
-      .replace(/,*([^,]+)$/, ` and ${cart.toppings[cart.toppings.length - 1]}`)
+
+  const visible = cart.price > 0 ? 'bottom-0' : ' -bottom-1/4'
+
+  console.log("the cart toppings:", cart.toppings)
+  const toppingsMessage = cart.toppings.map((t) => t)
+    .join(', ')
+    .replace(/,*([^,]+)$/, ` and ${cart.toppings[cart.toppings.length - 1]}`)
+
+  console.log(toppingsMessage)
   const toppings = () => {
     if (cart.toppings) {
       const message = `You are ordering a ${cart.name}
-        with  ${toppingsMessage()} for   ${price}`
+        with  ${toppingsMessage} for   ${price}`
       return message
     }
     return ' '
   }
+
 
   return (
     <div
