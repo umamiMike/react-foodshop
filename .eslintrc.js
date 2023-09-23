@@ -21,13 +21,13 @@ module.exports = {
     'react/prop-types': 'off',
     'no-console': 'off',
     'react/destructuring-assignment': 'off',
+    'semi': 'off'
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
     project: './tsconfig.json',
-    sourceType: 'module',
-  },
+    sourceType: 'module', },
   plugins: ['react', 'testing-library', '@typescript-eslint'],
   settings: {
     'import/parsers': {

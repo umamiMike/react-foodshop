@@ -1,16 +1,17 @@
-import React from "react"
-import type { MenuItem } from "./baseState"
+import { randomInt } from 'crypto'
+import React from 'react'
+import type { MenuItem } from './baseState'
 
 export function MenuCard(item: MenuItem, dispatch: any) {
   return (
-    <div className="flex flex-col justify-between p-4 leading-normal">
+    <div className="flex flex-col justify-between p-4 leading-normal border rounded-lg shadow-md md:flex-row md:max-w-xl dark:border-gray-300">
       <a
         href="/"
         onClick={(e) => {
           e.preventDefault()
-          dispatch({ type: "START_ORDER", payload: item })
+          dispatch({ type: 'START_ORDER', payload: item })
         }}
-        className="flex flex-col items-center bg-white border rounded-lg shadow-md md:flex-row md:max-w-xl dark:border-gray-300 "
+        className="flex flex-col items-center bg-white "
       >
         <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-500 ">
           {item.name}
