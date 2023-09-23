@@ -9,13 +9,6 @@ export function Splash() {
         <h2 className="">{state.shop_name}</h2>
         <div className="font-bold">{state.shop_description}</div>
       </div>
-      <div className="w-full h-{200} overflow-clip ">
-        <img
-          className="object-contain "
-          alt={state.shop_name}
-          src={state.shop_splash_img}
-        />
-      </div>
     </div>
   );
 }

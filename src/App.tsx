@@ -12,10 +12,9 @@ function App() {
       <div className="flex-row items-center justify-center max-w-screen-xl space-y-8">
         <Splash />
         <Menu />
-        <OrderModal/>
-
       </div>
       <Cart />
+        <OrderModal/>
     </AppProvider>
   );
 }

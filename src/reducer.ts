@@ -31,7 +31,6 @@ export const shopReducer = (state: Shop, action: Action) => {
       };
       break;
     case 'REMOVE_TOPPING':
-
       return {
         ...state,
         selected: {
