@@ -12,7 +12,6 @@ const appState = {
   ...cart,
   ...menuItems,
 };
-
 export const AppContext = createContext<{ state: Shop ; dispatch: any }>({
   state: appState,
   dispatch: () => null,

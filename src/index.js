@@ -1,25 +1,27 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
   createHttpLink,
-} from '@apollo/client';
-import './styles/output.css';
+} from '@apollo/client'
+import './styles/output.css'
 
-import App from './App';
+import App from './App'
 
-const cache = new InMemoryCache();
-// Create an HTTP link to the Absinthe server.
+const cache = new InMemoryCache()
 
 const link = createHttpLink({
   uri: 'http://localhost:4000/api',
-});
+})
+
 const client = new ApolloClient({
   link,
   cache,
-});
+})
+
+console.log(client)
 
 ReactDOM.render(
   <React.StrictMode>
@@ -27,5 +29,5 @@ ReactDOM.render(
       <App />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root'),
-);
+  document.getElementById('root')
+)
