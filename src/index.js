@@ -6,8 +6,8 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client'
-import './styles/output.css'
 
+import './styles/output.css'
 import App from './App'
 
 const cache = new InMemoryCache()
@@ -21,7 +21,6 @@ const client = new ApolloClient({
   cache,
 })
 
-console.log(client)
 
 ReactDOM.render(
   <React.StrictMode>

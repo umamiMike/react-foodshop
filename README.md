@@ -17,6 +17,8 @@ I have implemented a basic functioning [apollo graphql client](https://new.apoll
 
 ### Next Steps
 
+- ADD: ability to purchase multiple items
 - ADD: admin interface where you can
   - add items
   - add toppings to those items
+- ADD: meaningful  feedback for having hit the place order button

@@ -23,7 +23,7 @@ export function OrderModal() {
 
   return (
     <div key="555" className="overlay">
-      <div className="flex flex-col w-1/3 p-2 bg-gray-200 shadow-md gap-2" >
+      <div className="flex flex-col p-2 bg-gray-200 shadow-md sm:w-5/6 md:w-1/3 gap-2" >
         <div className="">
           <div className="flex justify-between flex-auto m-4">
             <div>
