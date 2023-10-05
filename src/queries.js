@@ -17,6 +17,22 @@ export const ALL_ORDERS = gql`
     }
   }
 `;
+
+export const SHOP_INFO = gql`
+
+query shopInfo {
+  shopInfo { 
+  shopDescription
+	shopName
+    order {
+      id
+    }
+    menu {
+      id
+    }
+  }
+} 
+`;
 export const MUTATE_ITEM = gql`
   mutation AddItem {
     addItem(id: "fooo", name: "fooobian") {
