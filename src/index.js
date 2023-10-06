@@ -13,14 +13,13 @@ import App from './App'
 const cache = new InMemoryCache()
 
 const link = createHttpLink({
-  uri: 'http://192.168.0.34:4000/api',
+  uri: 'http://localhost:4000/api',
 })
 
 const client = new ApolloClient({
   link,
   cache,
 })
-
 
 
 ReactDOM.render(

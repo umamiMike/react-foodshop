@@ -1,3 +1,4 @@
+
 export type ToppingType = {
   name: string;
   amt: number;
@@ -25,6 +26,7 @@ export type Shop = {
   cart: SelectedType;
   menuItems: MenuItem[];
 };
+
 
 export const menuItems: MenuItem[] = [
   {
@@ -93,8 +95,9 @@ export const menuItems: MenuItem[] = [
   },
 ];
 
+
 export const shopInfo: Shop = {
-  shop_name: 'The Name of the Shop',
+  shop_name: 'none',
   shop_description: 'A description of the shop',
   shop_splash_img: '',
   selected: { price: 0, name: '', toppings: [] },
