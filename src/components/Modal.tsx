@@ -7,7 +7,6 @@ export function OrderModal() {
   const ctx = useContext(AppContext)
   const { state, dispatch } = ctx
 
-  //some initial state to not show the modal
   if (state.selected.name === "") return (<div/>)
 
   return (
@@ -29,14 +28,14 @@ export function OrderModal() {
           </button>
         </div>
         </div>
-        <div className="w-full mb-4 grid gap-2"></div>
         <button
           type="button"
-          className="w-1/3 font-bold bg-orange-300 rounded-full "
+          className="w-1/3 font-bold bg-orange-300 rounded-full"
           onClick={() => {
            console.log("put some sort of dispatch here")
           }}
-        >
+          >
+          some button name
         </button>
       </div>
     </div>
