@@ -1,11 +1,9 @@
 import { gql } from '@apollo/client';
 
-export const MUTATE_ITEM = gql`
-  mutation AddItem {
-    addItem(id: "fooo", name: "fooobian") {
-      items {
-        name
-      }
-    }
-  }
-`;
+export const CREATE_ORDER = gql`
+  mutation createOrder($price: Number!) {
+    createOrder(price: $price ) { 
+      orderId
+      price
+    } 
+  } `;

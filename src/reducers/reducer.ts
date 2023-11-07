@@ -1,4 +1,4 @@
-import type { Shop } from './baseState'
+import type { Shop } from '../baseState'
 
 export type Action = {
   type:
@@ -7,6 +7,8 @@ export type Action = {
     | 'REMOVE_TOPPING'
     | 'CANCEL_ORDER'
     | 'ADD_TO_CART'
+    | 'PLACE_ORDER'
+
   payload: any
 }
 
@@ -24,7 +26,6 @@ export const shopReducer = (state: Shop, action: Action) => {
         },
       }
       return n
-      break
     case 'ADD_TOPPING':
       return {
         ...state,
@@ -34,7 +35,6 @@ export const shopReducer = (state: Shop, action: Action) => {
           toppings: state.selected.toppings.concat([action.payload.name]),
         },
       }
-      break
     case 'REMOVE_TOPPING':
       return {
         ...state,
@@ -46,14 +46,15 @@ export const shopReducer = (state: Shop, action: Action) => {
           ),
         },
       }
-      break
     case 'ADD_TO_CART':
       return { ...state, cart: state.selected, selected: { ...emptyCart } }
-      break
     case 'CANCEL_ORDER':
       const con: Shop = { ...state, selected: emptyCart, cart: emptyCart }
       return con
-      break
+    case 'PLACE_ORDER':
+      console.log("i am fookin placing my order")
+      console.log(state.cart)
+      return {...state}
     default:
       return state
   }

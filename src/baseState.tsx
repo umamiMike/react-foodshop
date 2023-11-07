@@ -12,12 +12,6 @@ export type MenuItem = {
   image: string;
 };
 
-type SelectedType = {
-  price: number;
-  toppings: ToppingType[] ;
-  name: string;
-};
-
 export type Shop = {
   shop_name: string;
   shop_splash_img: string;
@@ -26,6 +20,13 @@ export type Shop = {
   cart: SelectedType;
   menuItems: MenuItem[];
 };
+
+type SelectedType = {
+  price: number;
+  toppings: ToppingType[] ;
+  name: string;
+};
+
 
 
 export const menuItems: MenuItem[] = [

@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { AppProvider } from './AppContext';
 import { Splash } from './Splash';
-import { Menu } from './Menu';
+import { Menu } from './components/menu/Menu';
 import { Cart } from './Cart';
 import { OrderModal } from './components/OrderModal'
 

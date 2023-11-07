@@ -1,19 +1,21 @@
 import React from 'react'
-import type { MenuItem } from './baseState'
+import type { MenuItem } from '../../baseState'
 
 export function MenuCard(item: MenuItem, dispatch: any) {
   return (
-    <div key={ item.name} className="flex flex-col justify-between p-4 leading-normal border rounded-lg shadow-md md:flex-row md:max-w-xl dark:border-gray-300">
+    <div
+      key={item.name}
+      className="flex flex-col items-center justify-between w-4/5 p-4 m-2 mx-2 border rounded-lg shadow-md place-self-center md:flex-row md:max-w-xl dark:border-gray-300"
+    >
       <a
         href="/"
         onClick={(e) => {
-          console.log(item)
           e.preventDefault()
           dispatch({ type: 'START_ORDER', payload: item })
         }}
         className="flex flex-col items-center bg-white"
       >
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-500 ">
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-500">
           {item.name}
         </h5>
       </a>

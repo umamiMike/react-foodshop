@@ -12,11 +12,9 @@ export function Splash() {
   const si = data.shopInfo
 
   return (
-    <div className="sticky top-0 flex-row bg-gray-100 shadow-sm">
-      <div className="flex items-center space-x-4">
-        <h2 className="">{si.shopName}</h2>
-        <div className="font-bold">{si.shopDescription}</div>
-      </div>
+    <div className="sticky top-0 flex flex-col items-center bg-gray-100 md:flex-row topnav shadow-sm">
+        <h2 className="block">{si.shopName}</h2>
+        <div className="md:ml-4">{si.shopDescription}</div>
     </div>
   )
 }
