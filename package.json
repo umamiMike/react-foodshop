@@ -29,7 +29,6 @@
     "start": "concurrently \"npm run watch:css\" \"react-scripts start\"",
     "build": "npm run watch:css && react-scripts build && rm -rf ../priv/build && mv ./build ../priv",
     "build-fire": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch:css": "postcss -w src/index.css -o src/styles/output.css",
     "lint:typecheck": "tsc",
