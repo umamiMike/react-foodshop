@@ -27,7 +27,7 @@ export const shopReducer = (state: ShopProps, action: Action) => {
       }
       return n
     case 'ADD_TOPPING':
-      return {
+      const newState = {
         ...state,
         selected: {
           ...state.selected,
@@ -35,6 +35,7 @@ export const shopReducer = (state: ShopProps, action: Action) => {
           toppings: state.selected.toppings.concat([action.payload]),
         },
       }
+      return newState
     case 'REMOVE_TOPPING':
       return {
         ...state,

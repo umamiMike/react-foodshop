@@ -29,7 +29,6 @@ export function Cart() {
 
   const [createOrder, {data}] = useMutation(CREATE_ORDER)
   // stub for using return from api
-  console.log(data)
 
 
   return (
