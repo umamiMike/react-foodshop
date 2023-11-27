@@ -1,7 +1,7 @@
 import React from 'react'
-import type { MenuItem } from '../../baseState'
+import type { MenuItemProps } from '../../types'
 
-export function MenuCard(item: MenuItem, dispatch: any) {
+export function MenuCard(item: MenuItemProps, dispatch: any) {
   return (
     <div
       key={item.name}

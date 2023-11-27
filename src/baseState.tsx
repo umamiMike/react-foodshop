@@ -1,35 +1,7 @@
-
-export type ToppingType = {
-  name: string;
-  amt: number;
-};
-
-export type MenuItem = {
-  name: string;
-  amt: number;
-  description: string;
-  toppings: ToppingType[];
-  image: string;
-};
-
-export type Shop = {
-  shop_name: string;
-  shop_splash_img: string;
-  shop_description: string;
-  selected: SelectedType;
-  cart: SelectedType;
-  menuItems: MenuItem[];
-};
-
-type SelectedType = {
-  price: number;
-  toppings: ToppingType[] ;
-  name: string;
-};
+import type { Cart, ToppingProp, MenuItemProps, ShopProps, SelectedType} from "./types"
 
 
-
-export const menuItems: MenuItem[] = [
+export const menuItems: MenuItemProps[] = [
   {
     image: 'images/burrito.png',
     name: 'Ground Beef Burrito',
@@ -82,7 +54,7 @@ export const menuItems: MenuItem[] = [
     image: 'images/extreme-burrito.png',
     name: 'Burrito Extreme',
     description:
-        'The word extreme was invented for this Burrito, Loaded with all the goods',
+      'The word extreme was invented for this Burrito, Loaded with all the goods',
     amt: 3.50,
     toppings: [
       { name: 'sour cream', amt: 1.99 },
@@ -97,7 +69,7 @@ export const menuItems: MenuItem[] = [
 ];
 
 
-export const shopInfo: Shop = {
+export const shopInfo: ShopProps = {
   shop_name: 'none',
   shop_description: 'A description of the shop',
   shop_splash_img: '',
@@ -106,11 +78,6 @@ export const shopInfo: Shop = {
   menuItems,
 };
 
-export type Cart = {
-  selected?: SelectedType;
-  cart?: SelectedType;
-
-};
 
 export const cart: Cart = {
   selected: { price: 0, name: '', toppings: [] },

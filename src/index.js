@@ -10,10 +10,10 @@ import {
 import './styles/output.css'
 import App from './App'
 
+console.log(process.env.REACT_APP_GRAPHQL_ENDPOINT)
 const cache = new InMemoryCache()
-
 const link = createHttpLink({
-  uri: 'http://localhost:4000/api',
+  uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
 })
 
 const client = new ApolloClient({

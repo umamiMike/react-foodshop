@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { useMutation } from '@apollo/client'
-import { AppContext } from './AppContext'
-import { CREATE_ORDER } from './graphql/mutations'
+import { AppContext } from '../../AppContext'
+import { CREATE_ORDER } from '../../graphql/mutations'
 
 export function Cart() {
   const { state, dispatch } = useContext(AppContext)
@@ -29,6 +29,7 @@ export function Cart() {
 
   const [createOrder, {data, loading,  error}] = useMutation(CREATE_ORDER)
 
+
   return (
     <div
       className={`fixed bottom-0 flex-row w-screen p-4 overflow-hidden bg-gray-200 border-gray-400  ${visible} h-1/8 border-t-[1px] ease-in-out gap-2 transition-all duration-200`}
@@ -42,8 +43,7 @@ export function Cart() {
         type="button"
         className="px-4 py-2 font-bold text-white bg-yellow-500 rounded-full"
           onClick={() => {
-            dispatch({ type: 'PLACE_ORDER' })
-          }}
+            createOrder({variables: {price: cart.price.toString()}}) }}
       >
         place your order
       </button>

@@ -4,18 +4,17 @@ import { IoIosCloseCircleOutline } from 'react-icons/io'
 import { guid } from '../utils'
 import { AppContext } from '../AppContext'
 import { Topping } from './Topping'
-import type { MenuItem, ToppingType } from '../baseState'
+import type { ToppingProp, MenuItemProps } from '../types'
 
 export function OrderModal() {
   const ctx = useContext(AppContext)
   const { state, dispatch } = ctx
-  console.log(state.selected.name)
 
   const selected = state.menuItems.find(
-    (el: MenuItem) => el.name === state.selected.name
+    (el: MenuItemProps) => el.name === state.selected.name
   )
   // eslint-disable-next-line max-len
-  const Toppings = selected?.toppings.map((t: ToppingType) => (
+  const Toppings = selected?.toppings.map((t: ToppingProp) => (
     <Topping key={guid()} topping={t} />
     ))
 

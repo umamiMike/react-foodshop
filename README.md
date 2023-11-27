@@ -22,9 +22,7 @@ I have implemented a basic functioning [apollo graphql client](https://new.apoll
 
 ### Next Steps
 
-- ADD: ability to purchase multiple items
-- ADD: improve typing
 - ADD: admin interface where you can
   - add items
   - add toppings to those items
-- ADD: client server loop for order placement
+- ADD: ability to purchase multiple items

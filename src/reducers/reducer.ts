@@ -1,23 +1,23 @@
-import type { Shop } from '../baseState'
+import type { ShopProps, MenuItemProps, ToppingProp } from '../types'
 
 export type Action = {
   type:
-    | 'START_ORDER'
-    | 'ADD_TOPPING'
-    | 'REMOVE_TOPPING'
-    | 'CANCEL_ORDER'
-    | 'ADD_TO_CART'
-    | 'PLACE_ORDER'
+  | 'START_ORDER'
+  | 'ADD_TOPPING'
+  | 'REMOVE_TOPPING'
+  | 'CANCEL_ORDER'
+  | 'ADD_TO_CART'
+  | 'PLACE_ORDER'
 
-  payload: any
+  payload?: MenuItemProps | ToppingProp
 }
 
 const emptyCart = { name: '', price: 0, toppings: [] }
 
-export const shopReducer = (state: Shop, action: Action) => {
+export const shopReducer = (state: ShopProps, action: Action) => {
   switch (action.type) {
     case 'START_ORDER':
-      const n: Shop = {
+      const n: any = {
         ...state,
         selected: {
           ...action.payload,
@@ -31,8 +31,8 @@ export const shopReducer = (state: Shop, action: Action) => {
         ...state,
         selected: {
           ...state.selected,
-          price: state.selected.price + action.payload.value,
-          toppings: state.selected.toppings.concat([action.payload.name]),
+          price: state.selected.price + action.payload.amt,
+          toppings: state.selected.toppings.concat([action.payload]),
         },
       }
     case 'REMOVE_TOPPING':
@@ -40,21 +40,19 @@ export const shopReducer = (state: Shop, action: Action) => {
         ...state,
         selected: {
           ...state.selected,
-          price: state.selected.price - action.payload.value,
+          price: state.selected.price - action.payload.amt,
           toppings: state.selected.toppings.filter(
-            (t) => t !== action.payload.name
+            (t) => t.name !== action.payload.name
           ),
         },
       }
     case 'ADD_TO_CART':
       return { ...state, cart: state.selected, selected: { ...emptyCart } }
     case 'CANCEL_ORDER':
-      const con: Shop = { ...state, selected: emptyCart, cart: emptyCart }
+      const con: ShopProps = { ...state, selected: emptyCart, cart: emptyCart }
       return con
     case 'PLACE_ORDER':
-      console.log("i am fookin placing my order")
-      console.log(state.cart)
-      return {...state}
+      return { ...state }
     default:
       return state
   }

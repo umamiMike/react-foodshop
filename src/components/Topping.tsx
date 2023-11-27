@@ -1,25 +1,29 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../AppContext'
-import type { ToppingType } from '../baseState'
+import type { ToppingProp } from '../types'
 
-export function Topping(toppin: any) {
-  const { topping } = toppin
+type Props = {
+  topping: ToppingProp
+}
+
+export function Topping({ topping }: Props) {
   const { name, amt } = topping
   const { state, dispatch } = useContext(AppContext)
   const { toppings } = state.selected
 
-  // test for existance of  THIS topping
-  const exists = toppings.filter((t) => t === name).length !== 0
+  // test for existence of  THIS topping
+  const exists = toppings.filter((t) => t.name === name).length !== 0
   const handleChange = () => {
+    const payload = { amt, name } as ToppingProp;
     if (!exists) {
       dispatch({
         type: 'ADD_TOPPING',
-        payload: { value: amt, name },
+        payload,
       })
     } else {
       dispatch({
         type: 'REMOVE_TOPPING',
-        payload: { value: amt, name },
+        payload,
       })
     }
   }

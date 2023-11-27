@@ -1,12 +1,10 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
 import { AppProvider } from './AppContext';
 import { Splash } from './Splash';
 import { Menu } from './components/menu/Menu';
-import { Cart } from './Cart';
+import { Cart } from './components/cart/Cart';
 import { OrderModal } from './components/OrderModal'
 
-/* eslint-disable react/jsx-no-constructed-context-values */
 function App() {
   return (
     <AppProvider>
