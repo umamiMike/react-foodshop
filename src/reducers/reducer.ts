@@ -17,7 +17,7 @@ const emptyCart = { name: '', price: 0, toppings: [] }
 export const shopReducer = (state: ShopProps, action: Action) => {
   switch (action.type) {
     case 'START_ORDER':
-      const n: any = {
+      const n: ShopProps = {
         ...state,
         selected: {
           ...action.payload,

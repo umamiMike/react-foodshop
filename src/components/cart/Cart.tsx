@@ -4,7 +4,7 @@ import { AppContext } from '../../AppContext'
 import { CREATE_ORDER } from '../../graphql/mutations'
 
 export function Cart() {
-  const { state, dispatch } = useContext(AppContext)
+  const { state } = useContext(AppContext)
   const { cart } = state
 
   const price = cart.price ? `$${cart.price.toFixed(2)}` : ''
@@ -27,7 +27,9 @@ export function Cart() {
     return ' '
   }
 
-  const [createOrder, {data, loading,  error}] = useMutation(CREATE_ORDER)
+  const [createOrder, {data}] = useMutation(CREATE_ORDER)
+  // stub for using return from api
+  console.log(data)
 
 
   return (

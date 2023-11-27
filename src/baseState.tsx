@@ -1,4 +1,4 @@
-import type { Cart, ToppingProp, MenuItemProps, ShopProps, SelectedType} from "./types"
+import type { Cart, MenuItemProps, ShopProps } from "./types"
 
 
 export const menuItems: MenuItemProps[] = [

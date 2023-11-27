@@ -1,7 +1,8 @@
-import React from 'react'
+import React, {type Dispatch } from 'react'
 import type { MenuItemProps } from '../../types'
+import type { Action } from "../../reducers/reducer";
 
-export function MenuCard(item: MenuItemProps, dispatch: any) {
+export function MenuCard(item: MenuItemProps, dispatch: Dispatch<Action>) {
   return (
     <div
       key={item.name}

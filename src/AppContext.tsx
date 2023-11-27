@@ -15,10 +15,6 @@ export const AppContext = createContext<{ state: ShopProps ; dispatch: Dispatch<
   dispatch: () => null,
 });
 
-type HeaderProps = {
-  children: React.ReactNode;
-};
-
 export function AppProvider({ children }) {
   const [state, dispatch] = useReducer(shopReducer, appState);
   const contextValue = useMemo(() => ({ state, dispatch } ), [state, dispatch]);
