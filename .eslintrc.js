@@ -21,7 +21,8 @@ module.exports = {
     'react/prop-types': 'off',
     'no-console': 'off',
     'react/destructuring-assignment': 'off',
-    'semi': 'off'
+    'semi': 'off',
+    'import/no-extraneous-dependencies': ['error', {'devDependencies': true}]
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {

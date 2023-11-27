@@ -1,7 +1,6 @@
 import { useQuery } from '@apollo/client'
-import React, { useContext } from 'react'
-import { ALL_ITEMS, ALL_ORDERS, SHOP_INFO } from './graphql/queries'
-import { AppContext } from './AppContext'
+import React from 'react'
+import { SHOP_INFO } from './graphql/queries'
 
 export function Splash() {
   const { loading, error, data } = useQuery(SHOP_INFO)
