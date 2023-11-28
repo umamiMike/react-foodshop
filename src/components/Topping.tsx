@@ -1,35 +1,38 @@
 import React, { useContext } from 'react'
 import { AppContext } from '../AppContext'
-import type { ToppingProp } from '../types'
+import { type ToppingProp } from '../types'
 
-type Props = {
+
+type ToppingType = {
   topping: ToppingProp
-}
+  key: string
+};
 
-export function Topping({ topping }: Props) {
+
+export function Topping(toppin: ToppingType) {
+  const { topping } = toppin
   const { name, amt } = topping
   const { state, dispatch } = useContext(AppContext)
   const { toppings } = state.selected
 
-  // test for existence of  THIS topping
+  // test for existance of  THIS topping
   const exists = toppings.filter((t) => t.name === name).length !== 0
   const handleChange = () => {
-    const payload = { amt, name } as ToppingProp;
     if (!exists) {
       dispatch({
         type: 'ADD_TOPPING',
-        payload,
+        payload: { amt, name },
       })
     } else {
       dispatch({
         type: 'REMOVE_TOPPING',
-        payload,
+        payload: { amt,  name },
       })
     }
   }
 
   return (
-    <div className="mx-4 topping-row grid grid-cols-3 border-b-[1px] border-solid border-gray-400">
+    <div  key={name} className="mx-4 topping-row grid grid-cols-3 border-b-[1px] border-solid border-gray-400">
       <div>
         <input type="checkbox" checked={exists} onChange={handleChange} />
       </div>

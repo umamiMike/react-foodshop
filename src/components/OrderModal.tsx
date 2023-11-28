@@ -13,9 +13,10 @@ export function OrderModal() {
   const selected = state.menuItems.find(
     (el: MenuItemProps) => el.name === state.selected.name
   )
+
   // eslint-disable-next-line max-len
   const Toppings = selected?.toppings.map((t: ToppingProp) => (
-    <Topping key={guid()} topping={t} />
+    <Topping key={t.name + guid()} topping={ t } />
     ))
 
   if (state.selected.name === "") return (<div/>)

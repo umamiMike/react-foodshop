@@ -10,10 +10,11 @@ export function Cart() {
   const price = cart.price ? `$${cart.price.toFixed(2)}` : ''
   const visible = cart.price > 0 ? 'bottom-0' : ' -bottom-1/4'
 
+  console.log(cart.toppings)
   const toppingConstruct = cart.toppings
-    .map((t) => t)
+    .map((t) => t.name)
     .join(', ')
-    .replace(/,*([^,]+)$/, ` and ${cart.toppings[cart.toppings.length - 1]}`)
+    .replace(/,*([^,]+)$/, ` and ${cart.toppings[cart.toppings.length - 1].name}`)
 
   const toppingsMessage =
     cart.toppings.length === 0 ? '' : `with ${toppingConstruct}`
@@ -27,8 +28,10 @@ export function Cart() {
     return ' '
   }
 
-  const [createOrder, {data}] = useMutation(CREATE_ORDER)
+   // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [createOrder, {data, loading,  error}] = useMutation(CREATE_ORDER)
   // stub for using return from api
+  console.log("the response from the server is: ", data)
 
 
   return (

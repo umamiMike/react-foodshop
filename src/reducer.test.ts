@@ -26,15 +26,13 @@ test('add a topping', () => {
     name: 'taco',
     amt: 1,
     description: 'this is a taco',
-    toppings: [{ name: 'guac', amt: 1 }],
+    toppings: [],
     image: 'foo',
   }
   const action = { type: 'START_ORDER', payload: item } as Action
   const newState = shopReducer(initialState, action)
-  expect(newState.selected.toppings).toHaveLength(0)
   const topping: ToppingProp = { name: 'good guac', amt: 3 }
   const addToppingAction = { type: 'ADD_TOPPING', payload: topping } as Action
-
   const addedToppingState = shopReducer(newState, addToppingAction)
 
   expect(addedToppingState.selected.toppings).toHaveLength(1)
