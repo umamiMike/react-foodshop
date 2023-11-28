@@ -11,7 +11,7 @@ This is a toy implementation of a doordash-like interface
 - clicking the add to order shows a cart component
   - with formatted text for price
 
-Currently, the inital data, modeling the store information, items, and toppings, can be found in the [baseState.tsx](./src/baseState.tsx)
+Currently, the inital data, modeling the store information, items, and toppings, can be found in the [initialState.tsx](./src/initialState.tsx)
 Except for the Shop name and info, which is based on a query from to the api.
 
 ## Features

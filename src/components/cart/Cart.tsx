@@ -11,10 +11,19 @@ export function Cart() {
   const visible = cart.price > 0 ? 'bottom-0' : ' -bottom-1/4'
 
   console.log(cart.toppings)
+  const lastItem = cart.toppings.length - 1
+  console.log(lastItem)
+  console.log(cart.toppings)
+
   const toppingConstruct = cart.toppings
-    .map((t) => t.name)
+    .map((t, i) => {
+      if (i === lastItem) { 
+        return `and ${t.name}`
+      }
+      return t.name
+      }
+    )
     .join(', ')
-    .replace(/,*([^,]+)$/, ` and ${cart.toppings[cart.toppings.length - 1].name}`)
 
   const toppingsMessage =
     cart.toppings.length === 0 ? '' : `with ${toppingConstruct}`

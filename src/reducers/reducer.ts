@@ -50,7 +50,8 @@ export const shopReducer = (state: ShopProps, action: Action) => {
     case 'ADD_TO_CART':
       return { ...state, cart: state.selected, selected: { ...emptyCart } }
     case 'CANCEL_ORDER':
-      const con: ShopProps = { ...state, selected: emptyCart, cart: emptyCart }
+      console.log("cancelling the order")
+      const con: ShopProps = { ...state, selected: emptyCart }
       return con
     case 'PLACE_ORDER':
       return { ...state }

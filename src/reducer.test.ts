@@ -1,7 +1,7 @@
 // sum.test.js
 import { expect, test } from 'vitest'
 import { shopReducer, type Action } from './reducers/reducer'
-import { shopInfo } from './baseState'
+import { shopInfo } from './initialState'
 import { MenuItemProps, ToppingProp } from './types'
 
 test('starting an order', () => {

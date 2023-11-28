@@ -1,7 +1,7 @@
 import React, { useReducer, createContext, useMemo, type Dispatch } from 'react';
 import { shopReducer } from './reducers/reducer';
 import type { ShopProps } from './types';
-import { menuItems, shopInfo, cart } from './baseState';
+import { menuItems, shopInfo, cart } from './initialState';
 import type { Action } from "./reducers/reducer";
 
 const appState = {
